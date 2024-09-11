@@ -1,12 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import Circle from "./components/Circle/Circle.tsx";
 
 const App = () => {
-  const [count, setCount] = useState(0)
+  const numbers = [5, 11, 16, 23, 32];
 
   return (
     <>
-     hello world
+     <Circle number={numbers[4]} />
     </>
   )
 };
