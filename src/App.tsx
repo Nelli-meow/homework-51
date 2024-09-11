@@ -3,13 +3,30 @@ import './App.css'
 import Circle from "./components/Circle/Circle.tsx";
 
 const App = () => {
-  const arrNumbers = [5, 11, 16, 23, 32];
 
-  const [numbers, setNumbers] = useState<number[]>(arrNumbers);
+  const [numbers, setNumbers] = useState([5, 11, 16, 23, 32]);
+
+  const getNewNumber = () => {
+      const newNumbers: number[] = [];
+
+      while(newNumbers.length < 5) {
+          const randomNumber = Math.floor(Math.random() * 32) + 5;
+
+          if(!newNumbers.includes(randomNumber)) {
+              newNumbers.push(randomNumber);
+          }
+      }
+
+      newNumbers.sort((a, b) => a - b);
+      setNumbers(newNumbers);
+  }
 
   return (
     <>
-     <Circle number={arrNumbers[4]} />
+     <Circle number={} />
+
+
+        <button  type="button">New numbers</button>
     </>
   )
 };
