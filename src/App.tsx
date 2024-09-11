@@ -23,10 +23,13 @@ const App = () => {
 
   return (
     <>
-     <Circle number={} />
+        <div className="container">
+            {numbers.map((number) => (
+                <Circle number={number} />
+            ))}
 
-
-        <button  type="button">New numbers</button>
+            <button  type="button" className="getNewNumberBtn">New numbers</button>
+        </div>
     </>
   )
 };
