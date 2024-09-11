@@ -10,7 +10,7 @@ const App = () => {
       const newNumbers: number[] = [];
 
       while(newNumbers.length < 5) {
-          const randomNumber = Math.floor(Math.random() * 32) + 5;
+          const randomNumber = Math.floor(Math.random() * 32) + 6;
 
           if(!newNumbers.includes(randomNumber)) {
               newNumbers.push(randomNumber);
@@ -25,10 +25,10 @@ const App = () => {
     <>
         <div className="container">
             {numbers.map((number) => (
-                <Circle number={number} />
+                <Circle key={number} number={number}/>
             ))}
 
-            <button  type="button" className="getNewNumberBtn">New numbers</button>
+            <button onClick={getNewNumber} type="button" className="getNewNumberBtn">New numbers</button>
         </div>
     </>
   )
